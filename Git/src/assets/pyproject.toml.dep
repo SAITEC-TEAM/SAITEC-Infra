@@ -1,0 +1,13 @@
+[project]
+dependencies = [
+
+]
+
+
+
+[project.optional-dependencies]
+dev = [
+]
+prod = [
+    
+]

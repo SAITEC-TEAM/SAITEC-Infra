@@ -1,0 +1,11 @@
+{
+    "python.analysis.typeCheckingMode": "strict", // 配合你的数学严谨性，开启最强类型检查
+    "editor.formatOnSave": true,                  // 保存即格式化
+    "editor.defaultFormatter": "charliermarsh.ruff", // 指定使用 Ruff 格式化
+    "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "always",
+        "source.organizeImports.ruff": "always"
+    },
+    "python.testing.pytestArgs": ["tests"],       // 统一测试路径
+    "python.testing.pytestEnabled": true
+}

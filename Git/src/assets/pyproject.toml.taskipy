@@ -1,0 +1,3 @@
+[tool.taskipy.tasks]
+test = "pytest tests/"
+check = "ruff check . && mypy ."

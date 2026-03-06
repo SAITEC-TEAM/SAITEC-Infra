@@ -1,0 +1,4 @@
+[project]
+name = "{{$PROJECT_NAME}}"
+version = "{{$PROJECT_VERSION}}"
+requires-python = "{{$PYTHON_VERSION}}"
