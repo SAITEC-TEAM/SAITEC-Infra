@@ -299,7 +299,6 @@ create_or_update_release() {
     local asset_names_csv=""
 
     response_file="$(mktemp)"
-    trap 'rm -f "$response_file"' RETURN
 
     release_api_url="https://api.github.com/repos/${REPO_SLUG}/releases/tags/${TAG}"
     http_code="$(call_github_api GET "$release_api_url" "" "$response_file")"
@@ -345,6 +344,7 @@ EOF
 
     if [[ "$DRY_RUN" == "true" ]]; then
         printf '[DRY-RUN] 将上传 install.sh、artifact 和 checksum 到 GitHub release。\n'
+        rm -f "$response_file"
         return 0
     fi
 
@@ -364,6 +364,7 @@ EOF
     [[ -f "$checksum_path" ]] && upload_asset "$upload_url" "$checksum_path"
 
     printf 'Release 已就绪: %s\n' "$html_url"
+    rm -f "$response_file"
 }
 
 parse_args() {
