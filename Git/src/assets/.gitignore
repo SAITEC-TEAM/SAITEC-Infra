@@ -24,9 +24,19 @@ dist/
 Thumbs.db
 
 .vscode/
-.cursor/
-.trae/
+.cursor/*
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/ai-collaboration.mdc
+.claude/*
+!.claude/
+!.claude/CLAUDE.md
+.trae/*
+!.trae/
+!.trae/AGENTS.md
 .taskipy/
 .clause/
-.codex/
+.codex/*
+!.codex/
+!.codex/AGENTS.md
 .gemini/

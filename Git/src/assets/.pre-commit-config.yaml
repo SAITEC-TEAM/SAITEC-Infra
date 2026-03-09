@@ -5,3 +5,19 @@ repos:
       - id: ruff
         args: [ --fix ] # 发现问题自动修复
       - id: ruff-format # 运行 Black 风格的格式化
+  - repo: local
+    hooks:
+      - id: saitec-branch-name-law
+        name: enforce SAITEC branch naming law
+        entry: bash .saitec/hooks/enforce-branch-law.sh check-branch-name
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+      - id: saitec-main-push-law
+        name: block direct pushes to main
+        entry: bash .saitec/hooks/enforce-branch-law.sh block-main-push
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

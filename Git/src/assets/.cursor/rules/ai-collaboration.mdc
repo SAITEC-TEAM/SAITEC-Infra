@@ -1,0 +1,12 @@
+---
+description: SAITEC repository AI collaboration baseline
+alwaysApply: true
+---
+
+Follow `AI_COLLABORATION.md` as the single source of truth.
+
+- Read the relevant code and docs before editing.
+- Keep changes minimal and consistent with existing repository patterns.
+- Do not fabricate APIs, commands, environment state, or validation results.
+- Report what changed, how it was validated, and what risks remain.
+- If a tool-specific instruction conflicts with the main collaboration guide, prefer `AI_COLLABORATION.md`.

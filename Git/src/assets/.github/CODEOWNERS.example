@@ -1,0 +1,6 @@
+# Copy to .github/CODEOWNERS and replace the team or user identifiers.
+* @your-team-or-owner
+
+# Example:
+# /infra/ @saitedc-infra
+# /.github/ @saitedc-infra

@@ -1,1 +1,30 @@
 * text=auto eol=lf
+
+*.sh text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.mdc text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+*.cfg text eol=lf
+*.ini text eol=lf
+requirements*.txt text eol=lf
+poetry.lock text eol=lf
+package-lock.json text eol=lf
+pnpm-lock.yaml text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
