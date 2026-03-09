@@ -40,3 +40,8 @@ AI 在提交结果时应说明：
 - `.trae/AGENTS.md`：Trae 协作说明。
 
 这些文件只负责把主规范映射到各工具可识别的入口，不重复维护规则正文。
+
+除 `.github/copilot-instructions.md` 等仓库级协作文件外，`.cursor/`、`.claude/`、`.codex/`、`.trae/` 等本地工具目录可视为派生产物：
+- 团队共享与评审时，以 `AI_COLLABORATION.md` 和 `AGENTS.md` 为准。
+- 本地工具目录可以通过初始化脚本按需重建，不要求长期纳入版本控制。
+- 新成员 clone 仓库后，如需恢复本地 AI 工具入口，可执行 `install.sh init --non-interactive .`。

@@ -100,6 +100,10 @@ print_usage() {
   project_name, project_version, python_version, mypy_strict,
   install_hooks, ai_collaboration, ai_github, ai_cursor,
   ai_claude, ai_codex, ai_trae
+
+说明:
+  如未显式传入 --config，且目标仓库中已存在 .saitec/config.toml，
+  脚本会自动读取该文件以恢复本地 AI 工具入口和初始化选项。
 EOF
 }
 
@@ -806,12 +810,17 @@ main() {
 
     parse_args "$@"
     determine_interactive_mode
-    load_config_file
 
     TARGET_DIR="$(cd "$TARGET_DIR" 2>/dev/null && pwd || printf '%s' "$TARGET_DIR")"
     requirements_file="${TARGET_DIR}/requirements.txt"
     pyproject_file="${TARGET_DIR}/pyproject.toml"
     saitec_config_file="${TARGET_DIR}/.saitec/config.toml"
+
+    if [[ -z "$CONFIG_FILE" && -f "$saitec_config_file" ]]; then
+        CONFIG_FILE="$saitec_config_file"
+    fi
+
+    load_config_file
 
     if [[ ! -d "$TARGET_DIR" ]]; then
         fail "目标目录不存在: $TARGET_DIR"
@@ -881,6 +890,8 @@ main() {
 
     if [[ "$AI_COLLAB_ENABLED" == "true" ]]; then
         printf '已生成 AI 协作主规范与所选工具模板。\n'
+        printf '提醒: .cursor/.claude/.codex/.trae 等本地工具目录是可重建产物，通常不需要提交到版本库。\n'
+        printf '新成员 clone 仓库后，如需恢复本地 AI 工具入口，可执行: install.sh init --non-interactive .\n'
     else
         printf '未启用 AI 协作模板，仅生成基础工程配置。\n'
     fi

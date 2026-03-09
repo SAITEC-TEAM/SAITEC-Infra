@@ -24,19 +24,12 @@ dist/
 Thumbs.db
 
 .vscode/
-.cursor/*
-!.cursor/
-!.cursor/rules/
-!.cursor/rules/ai-collaboration.mdc
-.claude/*
-!.claude/
-!.claude/CLAUDE.md
-.trae/*
-!.trae/
-!.trae/AGENTS.md
 .taskipy/
 .clause/
-.codex/*
-!.codex/
-!.codex/AGENTS.md
+
+# Local AI tool adapters are regenerated from AI_COLLABORATION.md and .saitec/config.toml.
+.cursor/
+.claude/
+.trae/
+.codex/
 .gemini/
