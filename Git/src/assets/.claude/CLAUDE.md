@@ -1,6 +1,6 @@
 # Claude Code Guide
 
-Use `AI_COLLABORATION.md` and `AGENTS.md` as the authoritative instructions for this repository.
+Use `.saitec/AI_COLLABORATION.md` and `AGENTS.md` as the authoritative instructions for this repository.
 
 Before editing:
 - inspect the relevant code paths and docs

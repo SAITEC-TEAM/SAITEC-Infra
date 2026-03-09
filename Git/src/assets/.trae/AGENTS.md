@@ -1,6 +1,6 @@
 # Trae Guide
 
-This repository uses `AI_COLLABORATION.md` as the shared collaboration contract.
+This repository uses `.saitec/AI_COLLABORATION.md` as the shared collaboration contract.
 
 Please:
 - inspect relevant files before editing

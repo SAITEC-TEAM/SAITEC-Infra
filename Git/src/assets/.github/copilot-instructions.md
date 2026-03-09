@@ -1,6 +1,6 @@
 # Copilot Instructions
 
-Follow `AI_COLLABORATION.md` and `AGENTS.md` as the repository source of truth.
+Follow `.saitec/AI_COLLABORATION.md` and `AGENTS.md` as the repository source of truth.
 
 When assisting in this repository:
 - Read existing code and docs before proposing changes.

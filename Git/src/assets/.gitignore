@@ -27,7 +27,7 @@ Thumbs.db
 .taskipy/
 .clause/
 
-# Local AI tool adapters are regenerated from AI_COLLABORATION.md and .saitec/config.toml.
+# Local AI tool adapters are regenerated from .saitec/AI_COLLABORATION.md and .saitec/config.toml.
 .cursor/
 .claude/
 .trae/

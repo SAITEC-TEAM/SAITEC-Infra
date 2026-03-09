@@ -66,7 +66,7 @@ main() {
 
     printf '检查目标目录: %s\n' "$TARGET_DIR"
 
-    check_required_file "AI_COLLABORATION.md"
+    check_required_file ".saitec/AI_COLLABORATION.md"
     check_required_file "AGENTS.md"
 
     check_optional_file ".github/copilot-instructions.md" "repo"

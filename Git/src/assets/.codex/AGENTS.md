@@ -1,6 +1,6 @@
 # Codex Guide
 
-Primary rules live in `AI_COLLABORATION.md`.
+Primary rules live in `.saitec/AI_COLLABORATION.md`.
 
 Required behavior:
 - gather context before changing files
