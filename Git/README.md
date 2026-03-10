@@ -9,28 +9,28 @@
 在目标项目仓库中执行初始化：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   init .
 ```
 
 如果只想预览将要写入的内容：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   init --dry-run .
 ```
 
-如果想固定到其他版本，只需要把上面 URL 里的 `0.2.2` 替换成目标 release tag。
+如果想固定到其他版本，只需要把上面 URL 里的 `0.2.3` 替换成目标 release tag。
 
-初始化后，建议将 `.saitec/AI_COLLABORATION.md`、`AGENTS.md`、`.saitec/config.toml` 以及 `.github/` 下的协作文件纳入版本控制；`.cursor/`、`.claude/`、`.codex/`、`.trae/` 等本地 AI 工具目录视为可重建产物，通常不需要提交。
+初始化后，建议将 `.saitec/AI_COLLABORATION.md`、`.saitec/Skills.md`、`AGENTS.md`、`.saitec/config.toml` 以及 `.github/` 下的协作文件纳入版本控制；`.cursor/`、`.claude/`、`.codex/`、`.trae/` 等本地 AI 工具目录视为可重建产物，通常不需要提交。
 
 新成员 clone 已初始化项目后，如果需要恢复本地 AI 工具入口，直接在项目根目录执行：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   init --non-interactive .
 ```
 
@@ -54,7 +54,7 @@ bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/
 - `.saitec/hooks/enforce-branch-law.sh`
 - `.vscode/settings.json`
 - `.saitec/config.toml`
-- AI 协作文件，例如 `.saitec/AI_COLLABORATION.md`、`AGENTS.md`、`.github/copilot-instructions.md`、`.codex/AGENTS.md` 等
+- AI 协作文件，例如 `.saitec/AI_COLLABORATION.md`、`.saitec/Skills.md`、`AGENTS.md`、`.github/copilot-instructions.md`、`.codex/AGENTS.md` 等
 
 常用参数：
 
@@ -68,8 +68,8 @@ bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/
 示例：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   init --non-interactive --config ./saitec.toml .
 ```
 
@@ -97,16 +97,17 @@ ai_trae = false
 
 - `.saitec/AI_COLLABORATION.md`
 - `AGENTS.md`
+- 建议保留 `.saitec/Skills.md`
 - 仓库级工具入口，例如 `.github/copilot-instructions.md`
 - 本地工具入口，例如 `.cursor/rules/ai-collaboration.mdc`、`.claude/CLAUDE.md`、`.codex/AGENTS.md`、`.trae/AGENTS.md`
 
-`validate` 会对缺失的主规范直接报错；对缺失的本地工具目录只给出提示，不会把仓库判定为不合规。
+`validate` 会对缺失的主规范直接报错；对缺失的 `.saitec/Skills.md` 或本地工具目录只给出提示，不会把仓库判定为不合规。
 
 示例：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   validate .
 ```
 
@@ -127,8 +128,8 @@ bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/
 示例：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   doctor .
 ```
 
@@ -139,8 +140,8 @@ bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/
 示例：
 
 ```bash
-bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/install.sh) \
-  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.2/saitec-git-0.2.2.tar.gz \
+bash <(curl -fsSL https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/install.sh) \
+  --artifact-url https://github.com/SAITEC-TEAM/SAITEC-Infra/releases/download/0.2.3/saitec-git-0.2.3.tar.gz \
   version
 ```
 
@@ -169,7 +170,7 @@ bash src/shells/build-release.sh
 
 ```bash
 export GITHUB_TOKEN=xxxx
-bash src/shells/publish-release.sh --version 0.2.2
+bash src/shells/publish-release.sh --version 0.2.3
 ```
 
 发布脚本会：

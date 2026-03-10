@@ -1,6 +1,6 @@
 # {{$PROJECT_NAME}} AI Collaboration Guide
 
-本仓库支持人类开发者与多种 AI 工具协作开发。`.saitec/AI_COLLABORATION.md` 是唯一主规范；如果工具专属文件与本文件表述不一致，以本文件为准。
+本仓库支持人类开发者与多种 AI 工具协作开发。`.saitec/AI_COLLABORATION.md` 是唯一主规范；如果 `Skills.md`、工具专属文件与本文件表述不一致，以本文件为准。
 
 ## 1. 协作目标
 - 用 AI 提升信息检索、代码修改、测试补全、文档撰写与重构效率。
@@ -31,8 +31,14 @@ AI 在提交结果时应说明：
 - PR 描述中标注 AI 参与范围、人工复核点和验证结果。
 - 评审责任仍由人承担；AI 不能替代 reviewer 审批。
 
-## 5. 多工具适配约定
+## 5. Skills 约定
+- `.saitec/Skills.md` 是 Git 协作技能清单，聚焦分支命名、提交前校验、PR 合并路径和结果说明。
+- AI 在处理 Git 协作相关任务时，应先阅读本文件，再阅读 `.saitec/Skills.md`。
+- `Skills.md` 只补充执行层要求，不替代本文件的主规范地位。
+
+## 6. 多工具适配约定
 - `AGENTS.md`：仓库级 agent 入口说明。
+- `.saitec/Skills.md`：Git 协作技能清单。
 - `.github/copilot-instructions.md`：GitHub Copilot 指令适配文件。
 - `.cursor/rules/`：Cursor 规则目录。
 - `.claude/CLAUDE.md`：Claude Code 协作说明。
@@ -45,3 +51,4 @@ AI 在提交结果时应说明：
 - 团队共享与评审时，以 `.saitec/AI_COLLABORATION.md` 和 `AGENTS.md` 为准。
 - 本地工具目录可以通过初始化脚本按需重建，不要求长期纳入版本控制。
 - 新成员 clone 仓库后，如需恢复本地 AI 工具入口，可执行 `install.sh init --non-interactive .`。
+- `.saitec/Skills.md` 由初始化脚本同步生成，建议纳入版本控制，确保 AI 始终可发现该入口。

@@ -48,6 +48,17 @@ check_optional_file() {
     fi
 }
 
+check_recommended_file() {
+    local relative_path="$1"
+
+    if [[ -f "${TARGET_DIR}/${relative_path}" ]]; then
+        printf '[OK] %s\n' "$relative_path"
+        return 0
+    fi
+
+    warn "建议补充 ${relative_path}，以便 AI 发现 Git 协作技能入口。"
+}
+
 warn() {
     printf '[WARN] %s\n' "$1"
     WARNINGS=$((WARNINGS + 1))
@@ -68,6 +79,7 @@ main() {
 
     check_required_file ".saitec/AI_COLLABORATION.md"
     check_required_file "AGENTS.md"
+    check_recommended_file ".saitec/Skills.md"
 
     check_optional_file ".github/copilot-instructions.md" "repo"
     check_optional_file ".cursor/rules/ai-collaboration.mdc" "local"

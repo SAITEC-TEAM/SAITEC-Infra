@@ -4,8 +4,10 @@ alwaysApply: true
 ---
 
 Follow `.saitec/AI_COLLABORATION.md` as the single source of truth.
+Use `.saitec/Skills.md` for Git workflow expectations.
 
 - Read the relevant code and docs before editing.
+- If the task involves branches, commits, PRs, or delivery summaries, read `.saitec/Skills.md`.
 - Keep changes minimal and consistent with existing repository patterns.
 - Do not fabricate APIs, commands, environment state, or validation results.
 - Report what changed, how it was validated, and what risks remain.

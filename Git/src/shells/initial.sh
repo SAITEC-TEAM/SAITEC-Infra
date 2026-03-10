@@ -676,6 +676,7 @@ generate_ai_collaboration_assets() {
     fi
 
     copy_asset_relative_with_confirm ".saitec/AI_COLLABORATION.md"
+    copy_asset_relative_with_confirm "Skills.md" ".saitec/Skills.md"
     copy_asset_relative_with_confirm "AGENTS.md"
 
     if [[ "$AI_GITHUB_ENABLED" == "true" ]]; then

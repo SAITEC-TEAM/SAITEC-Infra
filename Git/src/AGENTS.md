@@ -5,11 +5,12 @@
 
 ## 2. 接口功能
 1. `initial.sh`
-   交互式初始化脚本，负责生成 `pyproject.toml`、复制 `.pre-commit-config.yaml` / `.gitignore` / `.gitattributes` / `.README.md`、创建编辑器目录、写入 VS Code `settings.json`，并按需生成 `.saitec/AI_COLLABORATION.md`、`AGENTS.md`、Copilot / Cursor / Claude Code / Codex / Trae 适配文件，以及 GitHub PR / Issue 模板。
+   交互式初始化脚本，负责生成 `pyproject.toml`、复制 `.pre-commit-config.yaml` / `.gitignore` / `.gitattributes` / `.README.md`、创建编辑器目录、写入 VS Code `settings.json`，并按需生成 `.saitec/AI_COLLABORATION.md`、`.saitec/Skills.md`、`AGENTS.md`、Copilot / Cursor / Claude Code / Codex / Trae 适配文件，以及 GitHub PR / Issue 模板。
 2. `validate_ai_collaboration.sh`
-   轻量检查脚本，用于验证目标仓库是否具备 AI 协作主规范与至少一个工具适配入口，适合接入手工检查、CI 或示例仓库验收。
+   轻量检查脚本，用于验证目标仓库是否具备 AI 协作主规范与至少一个工具适配入口，并对 `.saitec/Skills.md` 的缺失给出提示，适合接入手工检查、CI 或示例仓库验收。
 
 ## 3. 模板设计原则
 - `.saitec/AI_COLLABORATION.md` 是 AI 协作唯一主规范。
+- `.saitec/Skills.md` 是 Git 协作技能清单，用于补充执行层要求。
 - 各工具专属文件只做格式适配，不重复维护规则正文。
 - 初始化脚本必须支持重复执行，已有文件沿用覆盖确认逻辑。
